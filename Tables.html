@@ -17,8 +17,8 @@
 
       <tr>
         <!--Td: table(fill) data in cell-->
-        <td>FName</td>
-        <td>LName</td>
+        <th>FName</th>
+        <th>LName</th>
       </tr>
 
       <tr>
@@ -71,7 +71,9 @@
     <table border="1">
         <!-- thead: seperate header for table  -->
       <thead>
-        <th colspan="3">Personal Details</th>
+        <tr>
+        <th rowspan="3">Personal Details</th>
+        </tr>
       </thead>
 
       <!-- tbody:indicates main body of the table -->
@@ -103,7 +105,9 @@
 
       <!-- tfoot: separate footer for the table -->
       <tfoot>
+        <tr>
         <th colspan="3">End of table</th>
+      </tr>
       </tfoot>
     </table>
   </body>
