@@ -1,0 +1,36 @@
+body{
+    background-color: darkblue;
+    color: white;
+    text-align: justify;
+}
+h1{
+    font-family:Arial, Helvetica, sans-serif;
+}
+span{
+    color: orangered;
+}
+div.relative{
+    position: relative;
+    left: 900px;
+}
+ul.Background li{
+    color: orangered;
+}
+div.President img{
+    border-radius: 50%;
+    border:2px solid white;
+    outline: thin dashed orangered;
+    outline-offset: 3px;
+}
+div.Principal img{
+    border-radius: 50%;
+    border:2px solid white;
+    outline: thin dashed orangered;
+    outline-offset: 3px;
+}
+div.Coordinator img{
+    border-radius: 50%;
+    border:2px solid white;
+    outline: thin dashed orangered;
+    outline-offset: 3px;
+}

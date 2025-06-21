@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+      .errors {
+        background-color: #fff;
+        width: 500px;
+        padding: 30px 10px;
+        display: none;
+        margin-top: 20px;
+        color: red;
+        border: 1px solid #ccc;
+      }
+      input[type="text"] {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" placeholder="First Name" required />
+      <br />
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" placeholder="Last Name" required />
+      <br />
+      <label for="age">Age</label>
+      <input type="text" id="age" placeholder="Age" required />
+      <br />
+      <label for="male">Man</label>
+      <input type="radio" name="gender" id="male" required />
+      <label for="female">Woman</label>
+      <input type="radio" name="gender" id="female" required />
+      <br /><br />
+
+      <input type="submit" id="submit" disabled />
+      <input type="reset" id="reset" />
+      <div class="errors"></div>
+    </form>
+
+    <script>
+      const form = document.getElementById("form");
+      const errorDiv = document.querySelector(".errors");
+      const submitButton = document.getElementById("submit");
+
+      const nameRegex = /^[A-Za-z]{2,10}$/;
+      const ageRegex = /^\d{1,3}$/;
+
+      const validateForm = () => {
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const age = document.getElementById("age").value;
+        const gender = document.querySelector('input[name="gender"]:checked');
+
+        const errors = [];
+
+        if (!nameRegex.test(firstName)) errors.push("Invalid first name.");
+        if (!nameRegex.test(lastName)) errors.push("Invalid last name.");
+        if (!ageRegex.test(age) || age < 1 || age > 120)
+          errors.push("Invalid age.");
+        if (!gender) errors.push("Please select a gender.");
+
+        if (errors.length > 0) {
+          errorDiv.innerHTML = errors.map((error) => <p>${error}</p>).join("");
+          errorDiv.style.display = "block";
+          submitButton.disabled = true;
+        } else {
+          errorDiv.style.display = "none";
+          submitButton.disabled = false;
+        }
+      };
+
+      form.addEventListener("input", validateForm);
+      form.addEventListener("reset", () => {
+        errorDiv.style.display = "none";
+        submitButton.disabled = true;
+      });
+    </script>
+  </body>
+</html>

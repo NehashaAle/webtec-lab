@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Css Selectors</title>
+    <style>
+      /* Global selector  */
+      div * {
+        background-color: yellow;
+      }
+
+      /* Nested Selector  */
+      .box {
+        border: 2px solid green;
+        background-color: beige;
+        & > a {
+          color: green;
+        }
+        & :hover {
+          color: white;
+          background-color: salmon;
+        }
+      }
+
+      /* Pseudo Selector  */
+      p::before {
+        content: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuM_G-UVlnB5Z1QtWDCod15oj3yGGESntT9w&s);
+      }
+
+      .demo:hover {
+        background-color: hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Nested Css Selector</h2>
+    <div class="box">
+      This text contains a <a href="#">link</a>> Hover over the link to see the
+      effect.
+    </div>
+
+    <p>Pseudo Selector</p>
+    <p class="demo">Mouse Over Me</p>
+
+    <h2>Global Selector</h2>
+    <div class="info">
+      <p id="name">My name is Nehasha Ale.</p>
+      <p id="grade">I am studying Bsc.CSIT.</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<college>
+    <student>
+        <name>Nehasha Ale</name>
+        <email>magarni238@gmail.com</email>
+        <contact>9800000000</contact>
+        <address>Tilottama-01</address>
+        <marks>80</marks>
+    </student>
+
+    <student>
+        <name>Zhanshi</name>
+        <email>zhanshi2060@gmail.com</email>
+        <contact>9700000000</contact>
+        <address>Drivertole</address>
+        <marks>20</marks>
+    </student>
+</colllege>

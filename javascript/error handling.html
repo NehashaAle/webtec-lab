@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Error Handling</title>
+  </head>
+  <body>
+    <h2>Error Handling in Js</h2>
+
+    <p>Please input a number between 1 and 100:</p>
+
+    <input type="text" id="numberInput" />
+    <button onclick="validateInput()">Validate</button>
+
+    <p id="output"></p>
+    <script>
+      // 1. Syntax Error Example (uncomment to see)
+      //   console.log("This has a syntax error);
+
+      // 2. Runtime Error Example
+      try {
+        console.log(nonExistentVariable);
+      } catch (error) {
+        console.error("Runtime Error Caught:", error.message);
+      }
+
+      // 3. Logical Error with try/catch/throw/finally
+      function validateInput() {
+        const output = document.getElementById("output");
+        const input = document.getElementById("numberInput").value;
+
+        output.textContent = "";
+
+        try {
+          if (input.trim() === "") throw "Input is empty";
+          if (isNaN(input)) throw "Input is not a number";
+
+          const num = Number(input);
+          if (num > 100) throw "Number is too high";
+          if (num < 1) throw "Number is too low";
+
+          output.textContent = "Valid input: " + num;
+        } catch (err) {
+          output.textContent = "Error: " + err;
+        } finally {
+          document.getElementById("numberInput").value = "";
+          console.log("Validation completed");
+        }
+      }
+    </script>
+  </body>
+</html>

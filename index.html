@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <p id="random">This is some random text.</p>
+    <button id="btn">Click me!</button> -->
+
+    <form action="#">
+      <label for="username">username:</label><br />
+
+      <input type="reset" value="cancel" />
+      <input type="submit" value="submit" id="submit" />
+    </form>
+  </body>
+</html>
+<script lang="js">
+    const submit=document.getElementById("submit");
+    submit.addEventListener("click",()=>{
+        const username = document.getElementById("username").value;
+
+        console.log(username);
+
+    })
+
+
+  //       const button=document.getElementById("btn");
+  //       const random=document.getElementById("random");
+  //       console.log(button);
+
+  //       button.addEventListener("click",()=>{
+  //   //   alert("hello world");
+  //         random.innerHTML="Hello world";
+  //       });
+</script>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Form Validation with Button</title>
+  </head>
+  <body>
+    <form id="Total_form_validation">
+      <div>
+        <label for="fname"
+          >First Name:
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="Enter your first name"
+            oninput="validateFname()"
+          /><br />
+          <p id="fname_error" class="error"></p> </label
+        ><br />
+      </div>
+
+      <div>
+        <label for="lname"
+          >Last Name:
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="Enter your last name"
+          /><br />
+          <p id="lname_error" class="error"></p>
+        </label>
+        <br />
+      </div>
+
+      <div>
+        <label for="Date-of-Birth"
+          >Date-of-Birth: <input type="date" id="DOB" name="DOB" /><br />
+          <p id="DOB_error" class="error"></p>
+        </label>
+        <br />
+      </div>
+
+      <div>
+        <label for="Email"
+          >Email:
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+          /><br />
+          <p id="email_error" class="error"></p>
+        </label>
+        <br />
+      </div>
+
+      <div>
+        <label for="Contact No."
+          >Contact No.:
+          <input
+            type="tel"
+            id="Contact No."
+            name="Contact No."
+            placeholder="Enter your Contact No."
+          /><br />
+          <p id="Contact_error" class="error"></p>
+        </label>
+        <br />
+      </div>
+
+      <input type="reset" value="Cancel" />
+      <input type="button" value="Submit" />
+    </form>
+  </body>
+</html>
+
+<script lang="js">
+  function validateFname(){
+    const fname =document.getElementById('fname').value;
+    const fnamepattern = new RegExp(/^([A-Z][a-zA-Z]*){3,25}$/);
+
+    const lname =document.getElementById('lname').value;
+    const lnamepattern = new RegExp(/^([A-Z][a-zA-Z]*){3,25}$/);
+
+    const DOB =document.getElementById('DOB').value;
+    const DOBpattern = new RegExp(/^(?:0[1-9]|[12]\d|3[01])([\/.-])(?:0[1-9]|1[012])\1(?:19|20)\d\d$/);
+  }
+</script>

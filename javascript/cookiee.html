@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cookies</title>
+  </head>
+  <body>
+    <input type="text" name="name" id="name" placeholder="Enter your name" />
+    <button class="btn">Set Cookie</button>
+    <button class="btn1">Get Cookie</button>
+    <button class="btn2">Delete Cookie</button>
+  </body>
+  <script>
+    // Set Cookie
+    document.querySelector(".btn").addEventListener("click", () => {
+      const Name = document.getElementById("name").value;
+      document.cookie = `Name=${Name}; path=/; expires=Fri, 25 Apr 2025 12:00:00 UTC`;
+      alert("Cookie Set!");
+    });
+
+    // Get Cookie
+    document.querySelector(".btn1").addEventListener("click", () => {
+      console.log(document.cookie);
+      alert("Cookies: " + document.cookie);
+    });
+
+    // Delete Cookie
+    document.querySelector(".btn2").addEventListener("click", () => {
+      document.cookie = `Name=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC`;
+      alert("Cookie Deleted!");
+    });
+  </script>
+</html>

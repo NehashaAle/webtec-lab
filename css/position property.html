@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Position Demo</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        height: 2000px; /* to demonstrate scrolling */
+      }
+
+      .box {
+        width: 150px;
+        height: 100px;
+        margin: 20px;
+        color: white;
+        font-weight: bold;
+        padding: 10px;
+      }
+
+      .static {
+        position: static;
+        background: aqua;
+      }
+
+      .relative {
+        position: relative;
+        top: 20px;
+        left: 500px;
+        background: maroon;
+      }
+
+      .absolute {
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        background: orange;
+      }
+
+      .fixed {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: purple;
+      }
+
+      .sticky {
+        position: sticky;
+        top: 0;
+        background: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box static">Static</div>
+    <div class="box relative">Relative</div>
+    <div class="box absolute">Absolute</div>
+    <div class="box fixed">Fixed</div>
+    <div class="box sticky">Sticky</div>
+  </body>
+</html>

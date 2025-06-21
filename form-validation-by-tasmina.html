@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Student Details Form</h2>
+    <form id="studentForm">
+      <div>
+        <label for="fname">First Name:</label>
+        <input
+          type="text"
+          placeholder="Enter firstName"
+          id="fname"
+          name="fname"
+          oninput="valiadateData()"
+        /><br /><br />
+        <p id="fnameError" class="error"></p>
+      </div>
+
+      <div>
+        <label for="lname"
+          >Last Name:
+          <input
+            type="text"
+            placeholder="Enter lastName"
+            id="lname"
+            name="lname" /></label
+        ><br /><br />
+        <p id="lnameError" class="error"></p>
+      </div>
+
+      <div>
+        <label>Date of birth<input type="date" name="DOB" id="DOB" /></label
+        ><br /><br />
+        <p id="DOBError" class="error"></p>
+      </div>
+
+      <div>
+        <label>Email: <input type="email" id="email" name="email" /></label
+        ><br /><br />
+        <p id="emailError" class="error"></p>
+      </div>
+      <div>
+        <label>Faculty: <input type="text" id="faculty" required /></label
+        ><br /><br />
+      </div>
+      <div>
+        <label>Contact Number: <input type="tel" id="contact" required /></label
+        ><br /><br />
+      </div>
+      <!-- <div>
+        <label
+          >Permanent Address:
+          <input type="text" id="permanentAddress" required /></label
+        ><br /><br />
+      </div> -->
+      <!-- <div>
+        <label
+          >Temporary Address: <input type="text" id="temporaryAddress" /></label
+        ><br /><br />
+      </div> -->
+      <label
+        >Gender:
+
+        <input type="radio" name="gender" id="Male" />
+        <label for="Male">Male:</label>
+        <input type="radio" name="gender" id="Female" />
+        <label for="Female">Female:</label>
+        <input type="radio" name="gender" id="Others" />
+        <label for="Others">Others:</label> </label
+      ><br /><br />
+
+      <div>
+        <label>Age: <input type="number" id="age" required /></label
+        ><br /><br />
+      </div>
+      <!-- <div>
+        <label
+          >Parent's Name: <input type="text" id="parentName" required /></label
+        ><br /><br />
+      </div>
+      <div>
+        <label
+          >Parent's Number:
+          <input type="tel" id="parentNumber" required /></label
+        ><br /><br />
+      </div> -->
+
+      <div>
+        <input type="reset" value="Cancel" />
+        <input type="button" value="Submit" id="submitBtn" disabled />
+      </div>
+    </form>
+  </body>
+
+  <script lang="js">
+
+    function valiadateData() {
+
+      const fname = document.getElementById("fname").value;
+      const lname = document.getElementById("lname").value;
+      const namepattern = new RegExp(/^[A-Za-z]{2,50}$/);
+      const submitBtn = document.getElementById("submitBtn")
+
+      const DOB = document.getElementById("DOB").value;
+      const DOBpattern = new RegExp(/^(19|20)\d{2}[-\/](0[1-9]|1[0-2])[-\/](0[1-9]|[12][0-9]|3[01])$/);
+
+      const email = document.getElementById("email").value;
+      const emailpattern = new RegExp(/^[^ ]+@[^ ]+\.[a-z]{2,3}$/);
+
+      if (fname.match(namepattern)) {
+        submitBtn.disabled = false;
+      } else {
+        submitBtn.disabled = true;
+      }
+
+      if(!fname.match(namepattern)){
+        document.getElementById("fnameError").innerHTML = "Invalid first name"
+      }else{
+        document.getElementById("fnameError").innerHTML = ""
+      }
+
+
+      if(!lname.match(namepattern)){
+          document.getElementById("lnameError").innerHTML = "Invalid last name"
+        }else{
+          document.getElementById("lnameError").innerHTML = ""
+      }
+
+      if(!DOB.match(DOBpattern)){
+          document.getElementById("DOBError").innerHTML = "Invalid DOB"
+        }else{
+          document.getElementById("DOBError").innerHTML = ""
+      }
+
+      if(!email.match(emailpattern)){
+          document.getElementById("emailError").innerHTML = "Invalid email"
+        }else{
+          document.getElementById("emailError").innerHTML = ""
+      }
+
+
+
+      console.log("first name :",fname);
+      console.log("last name :",lname);
+      console.log("DOB :",DOB);
+      console.log("email :",email);
+
+
+
+      if (fname.match(fnamepattern)){
+        alert("valid data");
+      }else{
+        alert ("invalid data");
+      }
+    }
+
+
+
+
+    // document.getElementById("studentForm").addEventListener("submit", function(event) {
+    //             event.preventDefault();
+
+    //             const studentDetails = {
+    //                 firstName: document.getElementById("firstName").value,
+    //                 lastName: document.getElementById("lastName").value,
+    //                 DOB: document.getElementById("DOB").value,
+    //                 email: document.getElementById("email").value,
+    //                 faculty: document.getElementById("faculty").value,
+    //                 contact: document.getElementById("contact").value,
+    //                 permanentAddress: document.getElementById("permanentAddress").value,
+    //                 temporaryAddress: document.getElementById("temporaryAddress").value,
+    //                 // gender: document.getElementById("gender").value,
+    //                 age: document.getElementById("age").value,
+    //                 parentName: document.getElementById("parentName").value,
+    //                 parentNumber: document.getElementById("parentNumber").value
+    //             };
+
+    //             console.log("Student Details:", studentDetails);
+    //         });
+  </script>
+</html>
